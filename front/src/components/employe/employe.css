@@ -1,0 +1,63 @@
+.boutonabsent Link{
+    text-decoration: none;
+    cursor: pointer;
+}
+.titreemploye{
+    color: cornflowerblue;
+    font-family: 'Arial Narrow';
+    text-align: center;
+    padding-top: 0.3cm;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ajouteemployebtn{
+    background-color: rgb(70, 158, 98);
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.contenubtnajoutemploye{
+    margin-left:10px;
+    
+}
+.recherchebtnemploye{
+    width: 10cm;
+    border-radius: 5px;
+    margin-right: 20cm;
+    margin-left: 1cm;
+    height: 1cm;
+}
+.ajoutabsencebtn{
+    background-color: rgb(70, 158, 98);
+    text-decoration: none;
+    color: blanchedalmond;
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    
+}
+.voirbtnemploye{
+    background-color: rgb(60, 121, 190);
+    border: none;
+    color: blanchedalmond;
+    padding: 4px;
+    border-radius: 4px;
+}
+.lienabsencebtnemploye{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.contenubtnajoutabsenceetvoiremploye{
+    display: flex;
+    margin-top: 12px;
+    gap: 5px;
+    margin-left: 20px;
+    text-align: center;
+}
+.contenulistemploye{
+   
+    text-align: center;
+    
+}

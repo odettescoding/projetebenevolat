@@ -1,0 +1,74 @@
+
+.formulaireajoutabsence{
+    width: 40%;
+    height: 50%;
+    margin-left: 30%;
+    margin-top: 1cm;
+}
+.formulaireajoutabsence .contenu{
+    
+    background: radial-gradient(#EDDEBF,transparent);
+    margin-top: 10px;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.titreformajoutabsence{
+    color: cornflowerblue;
+    font-family: 'Arial Narrow';
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.contenudatedebutformajoutabsence{
+    display: flex;
+    gap: 0.4cm;
+    margin-top: 0.6cm;
+}
+.contenudatefinformajoutabsence{
+    display: flex;
+    gap: 0.4cm;
+    margin-top: 0.6cm;
+}
+.contenudureformabsence{
+    display: flex;
+    margin-top: 0.6cm;
+}
+.inputdureeformabsence{
+    border-radius: 5px;
+    margin-left: 0.3cm;
+}
+.contenumotifformabsence{
+    display: flex;
+    gap: 0.4cm;
+    margin-top: 0.6cm;
+}
+.contenubtnabsenceform{
+    display: flex;
+    margin-top: 12px;
+    gap: 0.2cm;
+    margin-left: 8cm;
+    text-align: center;
+}
+.btnsaveabsenceform{
+    background-color: rgb(60, 121, 190);
+    border: none;
+    color: blanchedalmond;
+    padding: 6px;
+    border-radius: 4px;
+}
+.annulerbtnabsenceform{
+    background-color: rgb(101, 102, 101);
+    
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+.lienbtnannulerabsenceform{
+    margin-top: 12px;
+    text-decoration: none;
+    color: blanchedalmond;
+    
+    text-align: center;
+}

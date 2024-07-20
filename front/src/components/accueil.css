@@ -1,0 +1,49 @@
+
+.titre1
+{
+    left:35%; 
+    animation: animate 3s ;
+    color: #ffffff;
+    text-align: center;
+    
+    font-family: 'rajdhani';
+}
+
+ 
+@keyframes animate
+{
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(0%);}
+}
+
+#typer1 {
+    display: inline-block;
+    white-space: nowrap; /* Empêche le retour à la ligne automatique */
+    overflow: hidden; /* Cache le texte excédentaire */
+    color: rgb(59, 59, 59);
+    font-size: 22px;
+  }
+  
+  #typer1 {
+    animation: typing1 5s steps(40, end) forwards; /* Utilisation de "forwards" pour garder la dernière frame de l'animation */
+  }
+  
+  
+  
+  /* Animation du typer pour le premier paragraphe */
+  @keyframes typing1 {
+    0% { width: 0 }
+    100% { width: 100% }
+  }
+ 
+ .image2{
+  width: 60%;
+  height: 100%;
+  
+  
+ }
+ .contenuer{  
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+}

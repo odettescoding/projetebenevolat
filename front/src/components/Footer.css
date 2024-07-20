@@ -1,0 +1,83 @@
+.footer {
+    position: absolute;
+    background-color: #6a6e74;
+    bottom: 0px;
+    width: 100%;
+    border: none;
+    z-index: -1;
+    padding-top: 45px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    color: white;
+    height: 5%;
+  }
+  .footer .center {
+    padding-top: 80px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+  }
+  .footer .right .reseau {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+  }
+  .e{
+    color:rgb(114, 4, 4);
+    font-size:30px;
+    font-weight: bold;
+  }
+  .phata{
+    font-size: small;
+  }
+  
+  
+  
+  .reseausociaux
+  {
+          background: rgb(59, 59, 59);
+          flex-direction: column;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          text-align: center;
+          position: fixed;
+          gap: 5px;
+          border-radius: 5%;
+      
+  }
+  .reseausociaux img
+  {
+    width: 80%;
+    border-radius: 100%;
+    padding: 10px;
+    
+  }
+
+.socialfooter
+{
+display: flex;
+justify-content: center;
+flex-direction: row;
+background: rgb(59, 59, 59);
+
+
+}
+.iconreseausociau
+{
+width: 5%;
+border-radius: 100%;
+padding: 20px;
+margin: 0;
+
+}
+

@@ -1,0 +1,15 @@
+.progress-bar-container {
+    width: 300px;
+    border: 1px solid #ccc;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

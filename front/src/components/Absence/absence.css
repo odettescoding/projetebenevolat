@@ -1,0 +1,25 @@
+.titrelistabsence{
+    color: cornflowerblue;
+    font-family: 'Arial Narrow';
+    text-align: center;
+    padding-top: 0.3cm;
+    align-items: center;
+    justify-content: center;
+}
+.inputrecherchelistabsence{
+    width: 10cm;
+    height: 1cm;
+    border-radius: 5px;
+    margin-right: 20cm;
+    margin-left: 1cm;
+}
+.btnvoirlistabsence{
+    background-color: rgb(60, 121, 190);
+    border: none;
+    color: blanchedalmond;
+    padding: 5px;
+    border-radius: 4px;
+}
+.contenulistabsenceemploye{
+    text-align: center;
+}
