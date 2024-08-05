@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './ajoutabsence.css';
 import axios from 'axios';
-import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './ajoutabsence.css';
 
 const Ajoutabsence = () => {
     const { idemploye } = useParams();
@@ -84,7 +84,7 @@ const Ajoutabsence = () => {
                 <h4 className='titreformajoutabsence'> Formulaire d'absence {idemploye}</h4>
 
                 <div className='contenudatedebutformajoutabsence'>
-                    <label htmlFor="dateDebut">Date de début :</label>
+                    <label htmlFor="dateDebut">Date de déb :</label>
                     <input type="date" id="dateDebut" value={values.dateDebut} onChange={(e) => setValues({ ...values, dateDebut: e.target.value })} onBlur={calculateDuration} />
                     <label htmlFor="dateFin">Heure:</label>
                     <input type="time" value={values.heureDebut} onChange={(e) => setValues({ ...values, heureDebut: e.target.value })} onBlur={calculateDuration} />
@@ -92,7 +92,7 @@ const Ajoutabsence = () => {
 
                 <div className='contenudatefinformajoutabsence'>
                     
-                    <label htmlFor="dateFin">Date de fin :</label>
+                    <label htmlFor="dateFin">Date de fin1 :</label>
                     <input type="date" id="dateFin" value={values.dateFin} onChange={(e) => setValues({ ...values, dateFin: e.target.value })} onBlur={calculateDuration} />
                     <label htmlFor="dateFin">Heure:</label>
                     <input type="time" value={values.heureFin} onChange={(e) => setValues({ ...values, heureFin: e.target.value })} onBlur={calculateDuration} />

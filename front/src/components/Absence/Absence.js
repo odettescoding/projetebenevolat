@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import './absence.css'
+import './absence.css';
 const Absence = () => {
     const [absences, setAbsences] = useState([]);
     const [selectedAbsence, setSelectedAbsence] = useState(null);
@@ -36,15 +36,25 @@ const Absence = () => {
         absence.nom.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    
+
+
     return (
-        <div>
-            <h4 className='titrelistabsence'>Liste d'absence des employés</h4>
-            <input 
-                className='inputrecherchelistabsence'
-                type="text"
-                placeholder="Rechercher par nom"
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
+        <div className='contenuabscence'>
+            <div>
+                <h4 className='titrelistabsence'>Liste d'absence des employés</h4>
+                <div>
+                    <input 
+                        className='inputrecherchelistabsence'
+                        type="text"
+                        placeholder="Rechercher par nom"
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    
+                </div>
+            
+            </div>
+            
             {filteredAbsences.length !== 0 ? (
                 <div className='contenulistabsenceemploye'>
                     <table className="table">
@@ -52,7 +62,7 @@ const Absence = () => {
                             <tr>
                                 <th scope="col">EMPLOYE</th>
                                 <th scope="col">NOM</th>
-                                <th scope="col">DATE DE DEBUt</th>
+                                <th scope="col">DATE DE DEBUT</th>
                                 <th scope="col">DATE DE FIN</th>
                                 <th scope="col">DUREE</th>
                                 <th scope="col">MOTIF D'ABSENCE</th>

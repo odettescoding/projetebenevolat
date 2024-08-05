@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './detail.css'
+import React, { useEffect, useState } from 'react';
+import './detail.css';
 const Detail = () => {
     const [details, setDetails] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -32,15 +32,17 @@ const Detail = () => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
-        <div>
-            <h4 className='titrereleve'>Relevé d'absence de chaque employé</h4>
-            <input
-                className='inputrecherchedetail'
-                type="text"
-                placeholder="Rechercher par nom"
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-            />
+        <div className='contenudetail'>
+            <div>
+                <h4 className='titrereleve'>Relevé d'absence de l'employé</h4>
+                <input
+                    className='inputrecherchedetail'
+                    type="text"
+                    placeholder="Rechercher par nom"
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                />
+            </div>
             <table className="table">
                 <thead>
                     <tr>

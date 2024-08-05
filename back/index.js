@@ -1,14 +1,11 @@
- import express from 'express'
- import mysql from 'mysql'
-import cors from 'cors'
+ import cors from 'cors'
+import express from 'express'
 import multer from 'multer'
-import fs from 'fs'
-import  path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import mysql from 'mysql'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-import {createCanvas,loadImage,Image} from 'canvas'
  const app = express()
  app.use(express.json())
  app.use(cors())
@@ -193,6 +190,19 @@ app.get('/detail', (req, res) => {
     });
 });
 
+
+
+app.delete('/delete/:idemploye',(req,res)=>{
+    const sql = "DELETE FROM employe WHERE idemploye =?"; 
+    const idemploye= req.params.idemploye;
+
+    db.query(sql,[idemploye] , (err,data) => {
+        if(err){
+            return res.json({Error:"Error"})
+        }
+        return res.json(data)
+    })
+})
 
 
 

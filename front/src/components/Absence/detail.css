@@ -1,15 +1,23 @@
+.contenudetail{
+    width: 100%;
+}
 .titrereleve{
-    color: cornflowerblue;
-    font-family: 'Arial Narrow';
     text-align: center;
     padding-top: 0.3cm;
     align-items: center;
     justify-content: center;
+    font-family: "rajdhani";
+    font-weight: 400;
+    font-size: 36px;
+    text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
+    background: linear-gradient(#eddebf, #b6b3b3);
+    box-shadow: #0D0E0F 4px 10px 50px;
+    color: #ffffff;   
+    text-transform: uppercase;
 }
 .inputrecherchedetail{
-    width: 10cm;
-    height: 1cm;
     border-radius: 5px;
-    margin-right: 20cm;
-    margin-left: 1cm;
+    width: 35vw;
+    padding: 5px;
+    margin-left: 2vw;
 }

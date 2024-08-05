@@ -2,54 +2,58 @@
 .formulaireajoutabsence{
     width: 40%;
     height: 50%;
-    margin-left: 30%;
-    margin-top: 1cm;
+    margin-left: 20%;
+    margin-top:12vh;
+    
 }
 .formulaireajoutabsence .contenu{
     
-    background: radial-gradient(#EDDEBF,transparent);
-    margin-top: 10px;
-    padding: 40px;
+    background: radial-gradient(#344e4a,transparent);
+    margin-top: 2vh;
+    padding: 10%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+    border: 1px solid black;
 }
 .titreformajoutabsence{
-    color: cornflowerblue;
+    color: rgb(11, 52, 129);
     font-family: 'Arial Narrow';
     text-align: center;
     align-items: center;
     justify-content: center;
+    font-weight: bolder;
 }
 .contenudatedebutformajoutabsence{
     display: flex;
-    gap: 0.4cm;
-    margin-top: 0.6cm;
+    gap: 1vw;
+    margin-top: 2vh;
 }
 .contenudatefinformajoutabsence{
     display: flex;
-    gap: 0.4cm;
-    margin-top: 0.6cm;
+    gap: 1vw;
+    margin-top: 2vh;
 }
 .contenudureformabsence{
     display: flex;
-    margin-top: 0.6cm;
+    margin-top: 2vh;
 }
 .inputdureeformabsence{
     border-radius: 5px;
-    margin-left: 0.3cm;
+    margin-left: 0.3vw;
 }
 .contenumotifformabsence{
     display: flex;
-    gap: 0.4cm;
-    margin-top: 0.6cm;
+    gap: 0.4vw;
+    margin-top: 2vh;
 }
 .contenubtnabsenceform{
     display: flex;
-    margin-top: 12px;
-    gap: 0.2cm;
-    margin-left: 8cm;
-    text-align: center;
+    margin-top: 5vh;
+    gap: 0.3vw;
+    margin-left: 20vw;
+    
 }
 .btnsaveabsenceform{
     background-color: rgb(60, 121, 190);

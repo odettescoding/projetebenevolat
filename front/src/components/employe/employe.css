@@ -1,36 +1,51 @@
+.contenuemploye{
+    width: 100%;
+}
 .boutonabsent Link{
     text-decoration: none;
     cursor: pointer;
 }
 .titreemploye{
-    color: cornflowerblue;
-    font-family: 'Arial Narrow';
+    
     text-align: center;
     padding-top: 0.3cm;
     align-items: center;
     justify-content: center;
-    
+    font-family: "rajdhani";
+    font-weight: 400;
+    font-size: 36px;
+    text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
+    background: linear-gradient(#eddebf, #b6b3b3);
+    box-shadow: #0D0E0F 4px 10px 50px;
+    color: #ffffff;   
 }
+/* .titreemploye:hover{
+    background: linear-gradient(#eddebf, #890008);
+} */
 .ajouteemployebtn{
     background-color: rgb(70, 158, 98);
     padding: 8px;
     border-radius: 5px;
     text-decoration: none;
     color: blanchedalmond;
+    margin-left: 2.8vw;
 }
 .contenubtnajoutemploye{
-    margin-left:10px;
     
+    gap: 42vw;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+    border-radius: 10px;
 }
 .recherchebtnemploye{
-    width: 10cm;
+    width: 35vw;
     border-radius: 5px;
-    margin-right: 20cm;
-    margin-left: 1cm;
-    height: 1cm;
+    
 }
 .ajoutabsencebtn{
-    background-color: rgb(70, 158, 98);
+    background-color: rgb(27, 88, 46);
     text-decoration: none;
     color: blanchedalmond;
     padding: 4px;
@@ -40,6 +55,20 @@
 }
 .voirbtnemploye{
     background-color: rgb(60, 121, 190);
+    border: none;
+    color: blanchedalmond;
+    padding: 4px;
+    border-radius: 4px;
+}
+.modifierbtnemploye{
+    background-color: rgb(240, 168, 35);
+    border: none;
+    color: blanchedalmond;
+    padding: 4px;
+    border-radius: 4px;
+}
+.supprimerbtnemploye{
+    background-color: red;
     border: none;
     color: blanchedalmond;
     padding: 4px;
@@ -60,4 +89,19 @@
    
     text-align: center;
     
+}
+.pagination{
+    
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+    gap: 2px;
+}
+.divbtnmodal{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+.table{
+    margin-top: 1vh;
 }

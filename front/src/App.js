@@ -1,15 +1,15 @@
 //  //import logo from './logo.svg';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter,Routes,Route} from 'react-router-dom'
-import Employe from './components/employe/Employe';
-import Ajoutemploye from './components/employe/Ajoutemploye';
-import Accueil from './components/Accueil';
 import Absence from './components/Absence/Absence';
 import Ajoutabsence from './components/Absence/Ajoutabsence';
 import Detail from './components/Absence/Detail';
+import Accueil from './components/Accueil';
+import Ajoutemploye from './components/employe/Ajoutemploye';
+import Employe from './components/employe/Employe';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
 
 
  function App() {
@@ -17,18 +17,19 @@ import Detail from './components/Absence/Detail';
     
       <div className="App">
         
-      <BrowserRouter>
-       <Nav/>
-       <Routes>
-         <Route path='/' element={<Accueil/>}/>      
-         <Route path='/employe' element={<Employe/>}/>
-         <Route path='/ajoutemploye' element={<Ajoutemploye/>}/>
-         <Route path='/absence' element={<Absence/>}/>
-         <Route path='/detail' element={<Detail/>}/>
-         <Route path='/ajoutabsence/:idemploye' element={<Ajoutabsence/>}/>
-         
-      </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <div className='contenunavetroutes'>
+            <Nav/>
+            <Routes>
+              <Route path='/' element={<Accueil/>}/>      
+              <Route path='/employe' element={<Employe/>}/>
+              <Route path='/ajoutemploye' element={<Ajoutemploye/>}/>
+              <Route path='/absence' element={<Absence/>}/>
+              <Route path='/detail' element={<Detail/>}/>
+              <Route path='/ajoutabsence/:idemploye' element={<Ajoutabsence/>}/>
+            </Routes>
+          </div>
+        </BrowserRouter>
       
       <Footer />
   

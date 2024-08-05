@@ -4,17 +4,23 @@ import "./accueil.css";
 const Accueil = () => {
   return (
     <>
-    <div>
-    <h5 id="typer1" className='titre1'>
-            Gestion d'absence de personnel
-    </h5>
+    <div  className="containeraccueil">
+      <h5 className='titreaccueil'>
+        GESTION D'ABSENCE DU PERSONNEL CENTRE EPHATA
+      </h5>
+      <div className='containerimageaccueil'>
+          <div className='containerimage1accueil'>
+            <img src='./assets/accueil.webp' alt="image1accueil" /> 
+          </div>
+          <div className='containerimage2accueil'>
+            <img src='./assets/accueil.gif' alt="image2accueil" /> 
+          </div>
+      </div>
+      <div className='slogan'>
+        <h5>" Ensemble, nous construisons l'avenir "</h5>
+      </div>
     </div>
-    <h3>
-      GESTION D'ABSENCE DU PERSONNEL
-    </h3>
-    <h3>
-      CENTRE EPHATA
-    </h3>
+    
 
     </>
   )
