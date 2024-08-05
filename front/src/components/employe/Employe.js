@@ -27,28 +27,28 @@ const Employe = () => {
             .catch(err => console.log(err));
     }, []);
 
-    const handleDelete = (idemploye) => {
-        const handleOpenAlertBoite= (employe) => {
-            setSelectedEmploye(employe);
-            setShowModalSupprimer(true);
-        };
-        const isConfirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
-        if (isConfirmed) {
-            axios.delete('http://localhost:3001/delete/' + idemploye)
-                .then(res => window.location.reload())
-                .catch(err => console.log(err))
+
+
+    const Supprimeremploye = () => {
+        if (selectedEmploye) {
+            axios.delete(`http://localhost:3001/delete/${selectedEmploye.idemploye}`)
+                .then(res => {
+                    setEmployes(employes.filter(employe => employe.idemploye !== selectedEmploye.idemploye));
+                    closemodalSupprimer(); // Fermer le modal après la suppression
+                })
+                .catch(err => console.log(err));
         }
-    }
+    };
     
     // const Supprimeremploye= () => {
         
     //     console.log("employe supprimer")
     // };
 
-    // const handleOpenAlertBoite= (employe) => {
-    //     setSelectedEmploye(employe);
-    //     setShowModalSupprimer(true);
-    // };
+    const handleOpenAlertBoite= (employe) => {
+        setSelectedEmploye(employe);
+        setShowModalSupprimer(true);
+    };
 
 
     // Calculer les indices des employés pour la page actuelle
@@ -173,11 +173,8 @@ const Employe = () => {
                                                 <button onClick={() => handleOpenModalUpdate(employe)} className="modifierbtnemploye">Modifier</button>
                                             </td>
                                             <td>
-                                                <button  onClick ={() => handleDelete(employe.idemploye)} className="supprimerbtnemploye">Supprimer</button>
-                                            </td>
-                                            {/* <td>
                                                 <button onClick={() => handleOpenAlertBoite(employe)} className="supprimerbtnemploye">Supprimer</button>
-                                            </td> */}
+                                            </td>
                                         </span>
                                     </tr>
                                 )
@@ -258,7 +255,7 @@ const Employe = () => {
                 </Modal.Body>
             </Modal>
 
-            {/* <Modal style={{ backgroundColor: 'grey' }} show={showModalSupprimer} onHide={() => setShowModalSupprimer(false)}>
+            <Modal style={{ backgroundColor: 'grey' }} show={showModalSupprimer} onHide={() => setShowModalSupprimer(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Alert de suppression</Modal.Title>
                 </Modal.Header>
@@ -277,7 +274,7 @@ const Employe = () => {
                     
                     </div>
                 </Modal.Body>
-            </Modal> */}
+            </Modal>
 
 
 
