@@ -66,10 +66,22 @@ const Employe = () => {
     };
 
     // Fonction pour ouvrir le modal modification employé sélectionné
-    const handleOpenModalUpdate = (employe) => {
-        setSelectedEmploye(employe);
-        setShowModalModifier(true);
-    };
+    // const handleOpenModalUpdate = (employe) => {
+    //     setSelectedEmploye(employe);
+    //     setShowModalModifier(true);
+    // };
+    // Fonction pour ouvrir le modal de modification avec les informations de l'employé sélectionné
+const handleOpenModalUpdate = (employe) => {
+    setSelectedEmploye(employe);
+    setValues({
+        matricule: employe.matricule,
+        nom: employe.nom,
+        mail: employe.mail,
+        cin: employe.cin,
+        service: employe.service
+    });
+    setShowModalModifier(true);
+};
     
 
 
@@ -92,9 +104,17 @@ const Employe = () => {
     };
 
     //fonction permettant d'enregistrer la modification
-    const saveModification= () => {
-        console.log("modifie")
-    };
+    // Fonction pour sauvegarder les modifications
+const saveModification = () => {
+    axios.put(`http://localhost:3001/update/${selectedEmploye.idemploye}`, values)
+        .then(res => {
+            console.log('Employé modifié avec succès');
+            setShowModalModifier(false); // Fermer le modal
+            window.location.reload(); // Rafraîchir la page pour voir les modifications
+        })
+        .catch(err => console.error(err));
+};
+
 
     // Fonction pour filtrer les employés en fonction du terme de recherche
     const filteredEmployees = employes.filter(employe =>
@@ -220,7 +240,7 @@ const Employe = () => {
             </Modal>
 
 
-            <Modal style={{ backgroundColor: 'grey' }} show={showModalModifier} onHide={() => setShowModalModifier(false)}>
+            {/* <Modal style={{ backgroundColor: 'grey' }} show={showModalModifier} onHide={() => setShowModalModifier(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modification informations</Modal.Title>
                 </Modal.Header>
@@ -253,7 +273,60 @@ const Employe = () => {
 
                     </div>
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
+            <Modal style={{ backgroundColor: 'grey' }} show={showModalModifier} onHide={() => setShowModalModifier(false)}>
+    <Modal.Header closeButton>
+        <Modal.Title>Modification informations</Modal.Title>
+    </Modal.Header>
+    <Modal.Body style={{ backgroundColor: 'blanchedalmond' }}>
+        {selectedEmploye && (
+            <div>
+                <img src={selectedEmploye.image_url} alt={selectedEmploye.nom} style={{ width: '100px', height: '100px' }} />
+                <p></p>
+                <div className='parag'>
+                    <label htmlFor="nom" className="form-label">NOM :</label>
+                    <input 
+                        type="text" 
+                        id='nom' 
+                        name='nom' 
+                        value={values.nom} 
+                        placeholder='entrer le nom' 
+                        onChange={(e) => setValues({ ...values, nom: e.target.value })} 
+                    />
+                </div>
+                <p><strong>Matricule: </strong>{selectedEmploye.matricule}</p>
+                <div className='parag'>
+                    <label htmlFor="mail" className="form-label">MAIL :</label>
+                    <input 
+                        type="email" 
+                        id='mail' 
+                        name='mail' 
+                        value={values.mail} 
+                        placeholder='entrer le mail' 
+                        onChange={(e) => setValues({ ...values, mail: e.target.value })} 
+                    />
+                </div>
+                <p><strong>CIN: </strong>{selectedEmploye.cin}</p>
+                <div className='parag'>
+                    <label htmlFor="service" className="form-label">SERVICE :</label>
+                    <select 
+                        className='selectinputajoutemploye' 
+                        value={values.service} 
+                        onChange={(e) => setValues({ ...values, service: e.target.value })}>
+                        <option value="">Cliquer ici pour choisir le service</option>
+                        <option value="Internat">Internat</option>
+                        <option value="Cours">Cours</option>
+                    </select>
+                </div>
+            </div>
+        )}
+        <div className='divbtnmodal' style={{ textAlign: 'end' }}>
+            <button className='btn btn-primary' onClick={() => saveModification()} style={{ color: 'white', backgroundColor: 'blue' }}>Modifier</button>
+            <button className='btn btn-primary' onClick={() => closemodalModifier()} style={{ color: 'white', backgroundColor: 'grey' }}>Annuler</button>
+        </div>
+    </Modal.Body>
+</Modal>
+
 
             <Modal style={{ backgroundColor: 'grey' }} show={showModalSupprimer} onHide={() => setShowModalSupprimer(false)}>
                 <Modal.Header closeButton>

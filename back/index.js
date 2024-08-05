@@ -6,6 +6,9 @@ import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const PORT=3001;
+//const PORT = process.env.PORT || 3001; // Changer à un autre port disponible
+
  const app = express()
  app.use(express.json())
  app.use(cors())
@@ -190,8 +193,24 @@ app.get('/detail', (req, res) => {
     });
 });
 
+app.put('/update/:idemploye', (req, res) => {
+    const { idemploye } = req.params;
+    const { nom, mail, service } = req.body;
 
+    // Vérifier que tous les champs sont bien définis
+    if (!nom || !mail || !service) {
+        return res.status(400).send('Données manquantes');
+    }
 
+    const sql = 'UPDATE employe SET nom = ?, mail = ?, service = ? WHERE idemploye = ?';
+    db.query(sql, [nom, mail, service, idemploye], (err, result) => {
+        if (err) {
+            console.error('Erreur SQL :', err);
+            return res.status(500).send('Erreur lors de la mise à jour des informations');
+        }
+        res.status(200).send('Informations mises à jour avec succès');
+    });
+});
 app.delete('/delete/:idemploye',(req,res)=>{
     const sql = "DELETE FROM employe WHERE idemploye =?"; 
     const idemploye= req.params.idemploye;
@@ -207,7 +226,10 @@ app.delete('/delete/:idemploye',(req,res)=>{
 
 
 //-------------------port d'ecoute-------------//
-app.listen(
-    3001,'0.0.0.0',()=>{
-    console.log("app is running !")
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+// app.listen(
+//     3001,'0.0.0.0',()=>{
+//     console.log("app is running !")
+// })
