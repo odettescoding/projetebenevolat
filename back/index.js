@@ -14,9 +14,9 @@ const PORT=3001;
  app.use(cors())
  app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// //----------------creation de la-------------------//
-// //----------------connexion avec-------------------//
-// //----------------- la base de données--------------//
+// ----------------creation de la-------------------//
+// ----------------connexion avec-------------------//
+// ----------------- la base de données--------------//
 const db= mysql.createConnection({
     host:"localhost",
     user:"root",
@@ -25,7 +25,7 @@ const db= mysql.createConnection({
     dateStrings:'date'
 })
 
-/*----------------------recuper laliste des employes ----------------------------*/
+/*----------------------recuper la liste des employes ----------------------------*/
 app.get('/employe', (req, res) => {
   const sql = "SELECT * FROM employe"; 
   db.query(sql, (err, data) => {
@@ -37,8 +37,7 @@ app.get('/employe', (req, res) => {
 });
 
 
-
-// //----------------------FIN-------------------------//
+// ----------------------FIN-------------------------//
 
 app.post('/ajoutabsence', (req, res) => {
     const { idemploye, dateDebut, heureDebut, dateFin, heureFin, duree, motif } = req.body;
@@ -63,45 +62,9 @@ app.post('/ajoutabsence', (req, res) => {
     });
 });
 
-// app.post('/ajoutabsence', (req, res) => {
-//     const { idemploye, dateDebut, heureDebut, duree, motif } = req.body;
-    
-//     // Calcul de la date de fin en fonction de la date de début et de la durée
-//     const moment = require('moment');
-
-//     // Convertir la durée en jours
-//     const dureeEnJours = parseInt(duree);
-
-//     // Formater la date de début au format YYYY-MM-DD HH:mm:ss
-//     const debutFormatted = moment(`${dateDebut} ${heureDebut}`, 'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm:ss');
-
-//     // Calculer la date de fin en ajoutant la durée en jours à la date de début
-//     const dateFinFormatted = moment(debutFormatted).add(dureeEnJours, 'days').format('YYYY-MM-DD HH:mm:ss');
-
-//     // Insérez l'absence dans la base de données
-//     const sql = "INSERT INTO absence (idemploye, datedebut, datefin, duree, motif) VALUES (?, ?, ?, ?, ?)";
-//     const values = [idemploye, debutFormatted, dateFinFormatted, duree, motif];
-    
-//     db.query(sql, values, (err, result) => {
-//         if (err) {
-//             console.error("Erreur lors de l'ajout de l'absence :", err);
-//             return res.status(500).json({ error: "Erreur lors de l'ajout de l'absence" });
-//         }
-        
-//         // Renvoyez une réponse indiquant que l'absence a été ajoutée avec succès
-//         res.status(200).json({ message: "Absence ajoutée avec succès" });
-//     });
-// });
-
-
-
-
-//----------------recupere la liste des utilisateurs qui ont creer compte---------------//
-
-//----------------------------Recupere tous les absences des employe--------------------------//
+//              Liste l'abscence des employes                    //
 app.get('/absence', (req, res) => {
     
-        //const sql = "SELECT reservation.*, voyageur.nom AS nom_voyageur, voyageur.email FROM reservation JOIN voyageur ON reservation.idvoyageur = voyageur.idvoyageur";
     const sql="SELECT absence.*,employe.image_url as image,employe.nom FROM absence JOIN employe ON absence.idemploye=employe.idemploye";
     //const sql = "SELECT * FROM absence";
     db.query(sql, (err, data) => {
@@ -135,7 +98,7 @@ app.post('/ajoutemploye', upload.single('image'), (req, res) => {
         return res.status(400).json({ error: "Aucune image téléchargée" });
     }
     
-    // Assurez-vous que toutes les données nécessaires sont présentes dans req.body
+    // Assurer que toutes les données nécessaires sont présentes dans req.body
     if (!req.body.matricule || !req.body.nom || !req.body.service || !req.body.cin) {
         return res.status(400).json({ error: "Veuillez remplir tous les champs" });
     }
@@ -193,6 +156,8 @@ app.get('/detail', (req, res) => {
     });
 });
 
+
+//Mettre à jour l'information employe
 app.put('/update/:idemploye', (req, res) => {
     const { idemploye } = req.params;
     const { nom, mail, service } = req.body;
@@ -211,6 +176,8 @@ app.put('/update/:idemploye', (req, res) => {
         res.status(200).send('Informations mises à jour avec succès');
     });
 });
+
+//                 Supprimer employé               //
 app.delete('/delete/:idemploye',(req,res)=>{
     const sql = "DELETE FROM employe WHERE idemploye =?"; 
     const idemploye= req.params.idemploye;

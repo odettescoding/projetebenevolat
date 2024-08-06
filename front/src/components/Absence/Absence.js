@@ -17,15 +17,18 @@ const Absence = () => {
             .catch(err => console.log(err));
     }, []);
 
+    // FUNCTION PERMETTANT D'OUVRIR LE MODAL LORSQU'ON CLICK SUR LE BOUTON voir//
     const handleOpenModal = (absence) => {
         setSelectedAbsence(absence);
         setShowModal(true);
     };
 
+    // FONCTION PERMATTANT DE FERMER LE MODAL
     const closeModal = () => {
         setShowModal(false);
     };
 
+    //FILTRE AVEC PAGINATION
     const indexOfLastAbsence = currentPage * absencesPerPage;
     const indexOfFirstAbsence = indexOfLastAbsence - absencesPerPage;
     const currentAbsences = absences.slice(indexOfFirstAbsence, indexOfLastAbsence);
@@ -35,8 +38,6 @@ const Absence = () => {
     const filteredAbsences = currentAbsences.filter(absence =>
         absence.nom.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
-    
 
 
     return (
@@ -81,7 +82,7 @@ const Absence = () => {
                                     <td>{absence.duree} heure</td>
                                     <td>{absence.motif}</td>
                                     <td>
-                                        <button className='btnvoirlistabsence' onClick={() => handleOpenModal(absence)}>V o i r</button>
+                                        <button className='btnvoirlistabsence' onClick={() => handleOpenModal(absence)}>Voir</button>
                                     </td>
                                 </tr>
                             ))}
