@@ -59,7 +59,7 @@ const Detail = () => {
                     {currentDetails.map((detail, index) => (
                         <tr key={index}>
                             <td>
-                                <img src={detail.image_url} alt={detail.nom} style={{ width: '50px', height: '50px' }} />
+                                <img src={detail.image_url} alt={detail.nom} style={{ width: '30px', height: '30px', borderRadius:'100%' }} />
                             </td>
                             <td>{detail.nom}</td>
                             <td>{detail.total_arret_maladie}</td>

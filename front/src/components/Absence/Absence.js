@@ -7,6 +7,7 @@ const Absence = () => {
     const [absences, setAbsences] = useState([]);
     const [selectedAbsence, setSelectedAbsence] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [showModalSupprimerabscence,setShowModalSupprimerabscence]=useState(false)
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [absencesPerPage] = useState(5);
@@ -23,10 +24,34 @@ const Absence = () => {
         setShowModal(true);
     };
 
+    // FUNCTION PERMETTANT D'OUVRIR LE MODAL LORSQU'ON CLICK SUR LE BOUTON supprimer//
+    const handleOpenModalSupprimerAbscence = (absence) => {
+        setSelectedAbsence(absence);
+        setShowModalSupprimerabscence(true);
+    };
+     // FUNCTION PERMETTANT D'EXECUTER LA SUPPRESSION //
+    const Supprimerabscence = () => {
+        if (selectedAbsence) {
+            axios.delete(`http://localhost:3001/deleteabscence/${selectedAbsence.id}`)
+                .then(res => {
+                    setAbsences(absences.filter(absence => absence.id !== selectedAbsence.id));
+                    closemodalSupprimerabscence(); // Fermer le modal après la suppression
+                })
+                .catch(err => console.log(err));
+        }
+    };
+
     // FONCTION PERMATTANT DE FERMER LE MODAL
     const closeModal = () => {
         setShowModal(false);
     };
+
+    // FONCTION PERMATTANT DE FERMER LE MODAL de suppression
+    const closemodalSupprimerabscence = () => {
+        setShowModalSupprimerabscence(false);
+    };
+
+
 
     //FILTRE AVEC PAGINATION
     const indexOfLastAbsence = currentPage * absencesPerPage;
@@ -72,18 +97,23 @@ const Absence = () => {
                         </thead>
                         <tbody>
                             {filteredAbsences.map(absence => (
-                                <tr key={absence.id}>
+                                <tr key={absence.id} className="lignetableau">
                                     <td>
-                                        <img src={absence.image} alt={absence.nom} style={{ width: '50px', height: '50px' }} />
+                                        <img src={absence.image} alt={absence.nom} style={{ width: '30px', height: '30px', borderRadius:'100px' }} />
                                     </td>
                                     <td>{absence.nom}</td>
                                     <td>{new Date(absence.datedebut).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
                                     <td>{new Date(absence.datefin).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
                                     <td>{absence.duree} heure</td>
                                     <td>{absence.motif}</td>
-                                    <td>
-                                        <button className='btnvoirlistabsence' onClick={() => handleOpenModal(absence)}>Voir</button>
-                                    </td>
+                                    <span className='contenubtnavoirabsenceetsuppimerabscence'>
+                                        <td>
+                                            <button className='btnvoirlistabsence' onClick={() => handleOpenModal(absence)}>Voir</button>
+                                        </td>
+                                        <td>
+                                            <button className='btnsupprimerabsence' onClick={() => handleOpenModalSupprimerAbscence(absence)}>Supprimer</button>
+                                        </td>
+                                    </span>
                                 </tr>
                             ))}
                         </tbody>
@@ -120,6 +150,25 @@ const Absence = () => {
                     )}
                     <div style={{ textAlign: 'end' }}>
                         <button className='btn btn-secondary' onClick={() => closeModal()} style={{ color: 'white', backgroundColor: 'blue' }}>OK</button>
+                    </div>
+                </Modal.Body>
+            </Modal>
+            <Modal style={{ backgroundColor: 'grey' }} show={showModalSupprimerabscence} onHide={() => setShowModalSupprimerabscence(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Alert de suppression</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{ backgroundColor: 'blanchedalmond' }}>
+                
+                    {selectedAbsence && (
+                        <div>
+                            
+                            <p><span style={{color:'red',fontSize:'20px',fontFamily:'cursive'}}>Ëtes vous sûr de supprimer l'abscence de: </span><strong>{selectedAbsence.nom}</strong> </p>                                                      
+                        </div>
+                    )}
+                    <div style={{ textAlign: 'end' }}>
+                        <button className='btn btn-secondary' onClick={() => Supprimerabscence()} style={{ color: 'white', backgroundColor: 'blue' }}>CONFIRMER</button>
+                        <button className='btn btn-secondary' onClick={() => closemodalSupprimerabscence()} style={{ color: 'white', backgroundColor: 'grey' }}>Annuler</button>
+                    
                     </div>
                 </Modal.Body>
             </Modal>

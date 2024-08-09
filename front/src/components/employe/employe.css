@@ -1,95 +1,105 @@
-.contenuemploye{
-    width: 100%;
-}
-.boutonabsent Link{
-    text-decoration: none;
-    cursor: pointer;
-}
-.titreemploye{
-    
-    text-align: center;
-    padding-top: 0.3cm;
-    align-items: center;
-    justify-content: center;
-    font-family: "rajdhani";
-    font-weight: 400;
-    font-size: 36px;
-    text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
-    background: linear-gradient(#eddebf, #b6b3b3);
-    box-shadow: #0D0E0F 4px 10px 50px;
-    color: #ffffff;   
-}
-/* .titreemploye:hover{
-    background: linear-gradient(#eddebf, #890008);
-} */
-.ajouteemployebtn{
-    background-color: rgb(70, 158, 98);
-    padding: 8px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: blanchedalmond;
-    margin-left: 2.8vw;
-}
-.contenubtnajoutemploye{
-    
-    gap: 42vw;
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    
-    border-radius: 10px;
-}
-.recherchebtnemploye{
-    width: 35vw;
-    border-radius: 5px;
-    
-}
-.ajoutabsencebtn{
-    background-color: rgb(27, 88, 46);
-    text-decoration: none;
-    color: blanchedalmond;
-    padding: 4px;
-    border-radius: 4px;
-    border: none;
-    
-}
-.voirbtnemploye{
-    background-color: rgb(60, 121, 190);
-    border: none;
-    color: blanchedalmond;
-    padding: 4px;
-    border-radius: 4px;
-}
-.modifierbtnemploye{
-    background-color: rgb(240, 168, 35);
-    border: none;
-    color: blanchedalmond;
-    padding: 4px;
-    border-radius: 4px;
-}
-.supprimerbtnemploye{
-    background-color: red;
-    border: none;
-    color: blanchedalmond;
-    padding: 4px;
-    border-radius: 4px;
-}
-.lienabsencebtnemploye{
-    text-decoration: none;
-    color: blanchedalmond;
-}
-.contenubtnajoutabsenceetvoiremploye{
-    display: flex;
-    margin-top: 12px;
-    gap: 5px;
-    margin-left: 20px;
-    text-align: center;
-}
-.contenulistemploye{
-   
-    text-align: center;
-    
-}
+.contenuemploye
+    {
+        width: 100%;
+    }
+
+.boutonabsent Link
+    {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.titreemploye
+    {
+        
+        text-align: center;
+        padding-top: 1vh;
+        align-items: center;
+        justify-content: center;
+        font-family: "rajdhani";
+        font-weight: 400;
+        font-size: 36px;
+        text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
+        background: linear-gradient(#eddebf, #b6b3b3);
+        box-shadow: #0D0E0F 4px 10px 50px;
+        color: #ffffff;   
+    }
+
+.ajouteemployebtn
+    {
+        background-color: rgb(27, 88, 46);
+        padding: 0.5%;
+        border-radius: 5px;
+        text-decoration: none;
+        color: blanchedalmond;
+        ;
+    }
+
+.contenubtnajoutemploye
+    {
+        
+        gap: 42vw;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        
+        border-radius: 10px;
+    }
+
+.recherchebtnemploye
+    {
+        width: 35vw;
+        border-radius: 5px;
+        
+    }
+
+.ajoutabsencebtn
+    {
+        background-color: rgb(27, 88, 46);
+        text-decoration: none;
+        color: blanchedalmond;
+        padding: 4px;
+        border-radius: 4px;
+        border: none;
+        
+    }
+
+.modifierbtnemploye
+    {
+        background-color: rgb(240, 168, 35);
+        border: none;
+        color: blanchedalmond;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+.supprimerbtnemploye
+    {
+        background-color: red;
+        border: none;
+        color: blanchedalmond;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+.lienabsencebtnemploye
+    {
+        text-decoration: none;
+        color: blanchedalmond;
+    }
+
+.contenubtnajoutabsenceetvoiremploye
+    {
+        display: flex;
+        gap: 5px;
+        
+    }
+
+.contenulistemploye
+    {
+        text-align: center;  
+    }
+
 .pagination{
     
     display: flex;
@@ -97,11 +107,19 @@
     padding: 0%;
     gap: 2px;
 }
-.divbtnmodal{
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-}
-.table{
-    margin-top: 1vh;
-}
+.divbtnmodal
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 1vw;
+    }
+
+.table
+    {
+        margin-top: 1vh;
+    }
+    .table th, tr{
+        
+        border: 1px solid black;
+        border-collapse: collapse;
+    }

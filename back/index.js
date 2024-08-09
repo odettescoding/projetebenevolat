@@ -190,7 +190,17 @@ app.delete('/delete/:idemploye',(req,res)=>{
     })
 })
 
+app.delete('/deleteabscence/:id',(req,res)=>{
+    const sql = "DELETE FROM absence WHERE id =?"; 
+    const id= req.params.id;
 
+    db.query(sql,[id] , (err,data) => {
+        if(err){
+            return res.json({Error:"Error"})
+        }
+        return res.json(data)
+    })
+})
 
 //-------------------port d'ecoute-------------//
 app.listen(PORT, () => {

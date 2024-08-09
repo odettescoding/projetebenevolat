@@ -1,30 +1,39 @@
 
-label{
-    display: block;
-}
-.contenuajoutemploye{
-    width: 40%;
-    height: 40%;
-    margin-left: 20%;
-    margin-top:5vh;
-    
-}
-.container{
-    background: radial-gradient(#344e4a,transparent);
-    margin-top: 2vh;
-    padding: 10%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    border: 1px solid black;
-    
-}
-.parag{
-    display: flex;
-    margin-top: 1vh;
-}
-.parag input{
+label
+    {
+        display: block;
+    }
+
+.contenuajoutemploye
+    {
+        width: 40%;
+        height: 40%;
+        margin-left: 20%;
+        margin-top:5vh;
+        
+    }
+
+.container
+    {
+        background: radial-gradient(#bed5f8,transparent);
+        margin-top: 2vh;
+        padding: 10%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        border: 1px solid black;
+        
+    }
+
+.parag
+    {
+        display: flex;
+        margin-top: 1vh;
+    }
+
+.parag input
+    {
     
         border-top: none;
         border-left: none;
@@ -34,56 +43,67 @@ label{
         background:none;
         margin-left: 15px;
     
-}
-.btn-primary{
-    margin-top: 20px;
-}
-.parag label{
-    font-family: 'rajdhani';
-    font-weight: bold;
-}
-.titreformaddemploye{
-    color: rgb(11, 52, 129);
-    font-family: 'Arial Narrow';
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-weight: bolder;
-}
-.selectinputajoutemploye{
-    /* width: 10cm;
-    margin-left: 0.2cm; */
-}
-.inputfileajoutemploye{
-    margin-top: 4vh;
-}
-.contenubtnformajoutemploye{
-    display: flex;
-    margin-top: 12px;
-    gap: 0.2cm;
-    margin-left: 20vw;
+    }
 
-}
-.annulerbtnformajoutemploye{
-    background-color: rgb(101, 102, 101);
-    
-    padding: 6px;
-    border-radius: 4px;
-    border: none;
-}
-.lienannulerbtnformajoutemploye{
-    
-    margin-top: 12px;
-    text-decoration: none;
-    color: blanchedalmond;
-    
-    text-align: center;
-}
-.savebtnformajutemploye{
-    background-color: rgb(60, 121, 190);
-    border: none;
-    color: blanchedalmond;
-    padding: 6px;
-    border-radius: 4px;
-    
-}
+.btn-primary
+    {
+        margin-top: 20px;
+    }
+
+.parag label
+    {
+        font-family: 'rajdhani';
+        font-weight: bold;
+    }
+
+.titreformaddemploye
+    {
+        color: rgb(11, 52, 129);
+        font-family: 'Arial Narrow';
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-weight: bolder;
+    }
+
+.inputfileajoutemploye
+    {
+        margin-top: 4vh;
+    }
+
+.contenubtnformajoutemploye
+    {
+        display: flex;
+        margin-top: 12px;
+        gap: 0.2cm;
+        margin-left: 20vw;
+
+    }
+.annulerbtnformajoutemploye
+    {
+        background-color: rgb(101, 102, 101);
+        
+        padding: 6px;
+        border-radius: 4px;
+        border: none;
+    }
+
+.lienannulerbtnformajoutemploye
+    {
+        
+        margin-top: 12px;
+        text-decoration: none;
+        color: blanchedalmond;
+        
+        text-align: center;
+    }
+.savebtnformajutemploye
+    {
+        background-color: rgb(60, 121, 190);
+        border: none;
+        color: blanchedalmond;
+        padding: 6px;
+        border-radius: 4px;
+        
+    }
+

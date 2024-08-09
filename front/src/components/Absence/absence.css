@@ -1,32 +1,46 @@
-.contenuabscence{
-    width: 100%;
-}
-.titrelistabsence{
-    text-align: center;
-    padding-top: 0.3cm;
-    align-items: center;
-    justify-content: center;
-    font-family: "rajdhani";
-    font-weight: 400;
-    font-size: 36px;
-    text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
-    background: linear-gradient(#eddebf, #b6b3b3);
-    box-shadow: #0D0E0F 4px 10px 50px;
-    color: #ffffff;   
-    text-transform: uppercase;
-}
-.inputrecherchelistabsence{
-    
-    border-radius: 5px;
-    width: 35vw;
-    padding: 5px;
-    margin-left: 2vw;
-    
-}
-.btnvoirlistabsence{
-    background-color: rgb(60, 121, 190);
+.contenuabscence
+    {
+        width: 100%;
+    }
+
+.titrelistabsence
+    {
+        text-align: center;
+        padding-top: 0.3cm;
+        align-items: center;
+        justify-content: center;
+        font-family: "rajdhani";
+        font-weight: 400;
+        font-size: 36px;
+        text-shadow: 1px 1px 1px rgb(235, 169, 169), 2px 2px 1px rgb(238, 1, 1);
+        background: linear-gradient(#eddebf, #b6b3b3);
+        box-shadow: #0D0E0F 4px 10px 50px;
+        color: #ffffff;   
+        text-transform: uppercase;
+    }
+
+.inputrecherchelistabsence
+    {
+        
+        border-radius: 5px;
+        width: 35vw;
+        padding: 5px;
+        margin-left: 2vw;
+        
+    }
+.btnvoirlistabsence
+    {
+        background-color: rgb(60, 121, 190);
+        border: none;
+        color: blanchedalmond;
+        padding: 12x;
+        border-radius: 4px;
+    }
+.btnsupprimerabsence
+{
+    background-color: red;
     border: none;
     color: blanchedalmond;
-    padding: 5px;
+    
     border-radius: 4px;
 }
